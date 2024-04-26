@@ -1,0 +1,14 @@
+pipeline {
+	agent any
+	tools { nodejs "nodejs" }
+	
+	stages {
+		stage('Build') {
+			steps {
+				script {
+					git branch: 'BRANCH_NAME', url: 'GIT_PROJECT_URL'
+				}
+			}
+		}
+	}
+}
